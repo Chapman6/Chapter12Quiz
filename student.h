@@ -22,8 +22,8 @@ class student : protected ID
 	courseInfo studentCourses[noCourses];
 
 public:
-	void print();
-	void getInfo();
+	void print();//course name, student info, grade info
+	void getInfo();//courses student is enrolled in
 	void setGrades();
 	student();
 	~student();
