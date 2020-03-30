@@ -14,16 +14,18 @@ const int noCourses = 10;
 
 class student : protected ID
 {
-	struct courseInfo
+private:
+	float grades[2][10];
+	/*struct courseInfo
 	{
-		course students[2];
+		course students[2][10];
 		float grades[noAssignments];
 	};
 	courseInfo studentCourses[noCourses];
-
+	*/
 public:
-	void print();
-	void getInfo();
+	void print();//course name, student info, grade info
+	//void getInfo();courses student is enrolled in
 	void setGrades();
 	student();
 	~student();
