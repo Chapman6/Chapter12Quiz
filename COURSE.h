@@ -7,7 +7,9 @@ class course
 {
 public:
 	course();
-	string setCourse();
+	char courseName;
+	void setCourse();
+	string courseIdent;
 	~course();
 };
 

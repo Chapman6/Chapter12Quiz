@@ -14,44 +14,44 @@ student::student()
 			grades[i][j] = 0;
 	}
 }
+
 void student::print()
 {
 	ID::printID();
 	int i = 0;
 	while (i < 2)
 	{
-		string courseName = course::setCourse();
-		cout << "Course: " << courseName << endl;
-		switch courseName
+		cout << "Course: " << courseIdent << endl;
+		switch (courseName)
 		{
-		case "algebra":
+		case 'a':
 			cout << "The instructor is Mr. Math." << endl;
 			break;
-		case "biology":
+		case 'b':
 			cout << "The instructor is Mrs. Biology." << endl;
 			break;
-		case "calculus":
+		case 'c':
 			cout << "The instructor is Dr. Math." << endl;
 			break;
-		case "diving":
+		case 'd':
 			cout << "The instructor is Dr. Diving." << endl;
 			break;
-		case "english":
+		case 'e':
 			cout << "The instructor is Mr. Janke." << endl;
 			break;
-		case "greek":
+		case 'g':
 			cout << "The instructor is Mr. Greek." << endl;
 			break;
-		case "latin":
+		case 'l':
 			cout << "The instructor is Ms. Latin." << endl;
 			break;
-		case "metaphysics":
+		case 'm':
 			cout << "The instructor is Dr. Philosophy." << endl;
 			break;
-		case "physics":
+		case 'p':
 			cout << "The instructor is Mrs. Physics." << endl;
 			break;
-		case "soccer":
+		case 's':
 			cout << "The instructor is Chapman." << endl;
 			break;
 		default:
@@ -73,9 +73,13 @@ void student::setGrades()
 		cout << "Grade on assignment " << i << ": " << a << endl;
 		grades[0][i] = a;
 		average += a;
-		cin >> a;
+		if (i != 9)
+			cin >> a;
 	}
 	cout << "Average grade: " << average / 10 << endl;
 }
 
-student::~student() {}
+student::~student() 
+{
+
+}

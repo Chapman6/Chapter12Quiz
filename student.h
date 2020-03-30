@@ -5,14 +5,14 @@
 #include <iomanip>
 #include <string>
 #include "ID.h"
-#include "course.h"
+#include "COURSE.h"
 
 using namespace std;
 
 const int noAssignments = 10;
 const int noCourses = 10;
 
-class student : protected ID
+class student : protected ID, protected course
 {
 private:
 	float grades[2][10];

@@ -6,46 +6,45 @@ using namespace std;
 
 course::course()
 {
-	courseName = " ";
+	courseName = ' ';
 }
 
-string course::setCourse();
+void course::setCourse()
 {
-	char courseName;
 	cout << "Please enter the first letter of the course you would like to take. The options are algebra, biology," << endl;
 	cout << "calculus, diving, english, greek, latin, metaphysics, physics, or soccer." << endl;
 	cin >> courseName;
-	switch tolower(courseName)
+	switch (tolower(courseName))
 	{
 	case 'a':
-		return "algebra";
+		courseIdent = "algebra";
 		break;
 	case 'b':
-		return "biology";
+		courseIdent = "biology";
 		break;
 	case 'c':
-		return "calculus";
+		courseIdent = "calculus";
 		break;
 	case 'd':
-		return "diving";
+		courseIdent = "diving";
 		break;
 	case 'e':
-		return "english";
+		courseIdent = "english";
 		break;
 	case 'g':
-		return "greek";
+		courseIdent = "greek";
 		break;
 	case 'l':
-		return "latin";
+		courseIdent = "latin";
 		break;
 	case 'm':
-		return "metaphysics";
+		courseIdent = "metaphysics";
 		break;
 	case 'p':
-		return "physics";
+		courseIdent = "physics";
 		break;
 	case 's':
-		return "soccer";
+		courseIdent = "soccer";
 		break;
 	default:
 		cout << "That course is not offered. Please enter another course." << endl;
@@ -53,4 +52,7 @@ string course::setCourse();
 	}
 }
 
-course::~course() {}
+course::~course()
+{
+
+}
