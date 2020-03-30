@@ -16,6 +16,7 @@ class student : protected ID, protected course
 {
 private:
 	float grades[2][10];
+	float gradeAvg1, gradeAvg2;
 	/*struct courseInfo
 	{
 		course students[2][10];
@@ -27,6 +28,7 @@ public:
 	void print();//course name, student info, grade info
 	//void getInfo();courses student is enrolled in
 	void setGrades();
+	void printGrades();
 	student();
 	~student();
 };

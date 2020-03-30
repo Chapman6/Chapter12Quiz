@@ -57,26 +57,57 @@ void student::print()
 		default:
 			cout << "The instructor is Mr. Lowe." << endl;
 		}
-		setGrades();
 		i++;
 	}
+	printGrades();
 }
 
 void student::setGrades()
 {
-	cout << "Please enter your grades." << endl;
-	int i;
-	float a, average;
-	cin >> a;
-	for (i = 0; i < 10; i++)
+	static int count = 0;
+	while (count < 2)
 	{
-		cout << "Grade on assignment " << i << ": " << a << endl;
-		grades[0][i] = a;
-		average += a;
-		if (i != 9)
-			cin >> a;
+		cout << "Please enter your grades." << endl;
+		int i;
+		float a, average;
+		cin >> a;
+		for (i = 0; i < 10; i++)
+		{
+			cout << "Grade on assignment " << i << ": " << a << endl;
+			grades[count][i] = a;
+			average += a;
+			if (i != 9)
+				cin >> a;
+		}
+		if (count == 0)
+		{
+			gradeAvg1 = average / 10;
+			cout << "Average grade: " << gradeAvg1 << endl;
+		}
+		else
+		{
+			gradeAvg2 = average / 10;
+			cout << "Average grade: " << gradeAvg2 << endl;
+		}
 	}
-	cout << "Average grade: " << average / 10 << endl;
+}
+
+void student::printGrades()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		cout << "Grades: ";
+		for (int j = 0; j < 10; j++)
+			cout << grades[i][j] << " ";
+		cout << endl;
+		cout << "Grade Average: ";
+		if (i == 0)
+			cout << gradeAvg1;
+		else
+			cout << gradeAvg2;
+		cout << endl;
+	}
+	cout << endl;
 }
 
 student::~student() 
